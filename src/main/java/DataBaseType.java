@@ -45,10 +45,10 @@ public enum  DataBaseType {
 
 
     public static void main(String[] args){
-        System.out.println(DataBaseType.MYSQL.name);
-        System.out.println(DataBaseType.ORACLE.name);
-        System.out.println(DataBaseType.POSTGRESQL.name);
-        System.out.println(DataBaseType.SQLSERVER.name);
+        System.out.println("容易忽略差别导致出错的name属性和name方法：");
+        System.out.println("name属性返回值：" + DataBaseType.MYSQL.name);
+        System.out.println("name方法返回值：" + DataBaseType.MYSQL.name());
+        System.out.println("getName()方法返回值：" + DataBaseType.MYSQL.getName());
     }
 
 
