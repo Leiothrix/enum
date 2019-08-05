@@ -35,21 +35,19 @@ public enum  DataBaseType {
         this.name = name;
     }
 
+    /**
+     * 枚举类中不应出现set方法，毕竟是个final，加set违背初衷
+     */
     public String getName() {
         return name;
     }
 
-    public void setName(String name) {
-        this.name = name;
-    }
-
+    public static final String AAA = "汪汪汪";
 
     public static void main(String[] args){
-        System.out.println(DataBaseType.MYSQL.name);
-        System.out.println(DataBaseType.ORACLE.name);
-        System.out.println(DataBaseType.POSTGRESQL.name);
-        System.out.println(DataBaseType.SQLSERVER.name);
+        System.out.println(DataBaseType.MYSQL.getName());
+        System.out.println(DataBaseType.ORACLE.getName());
+        System.out.println(DataBaseType.POSTGRESQL.getName());
+        System.out.println(DataBaseType.SQLSERVER.getName());
     }
-
-
 }
