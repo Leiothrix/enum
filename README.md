@@ -1,8 +1,14 @@
-/**
- * @author adam
- * @date 2019/5/9 15:37
- * PS: You may say that I'm a dreamer.But I'm not the only one.
- */
+# enum
+Java枚举类测试
+
+线上产品出现了一个bug：
+```java
+StingUtils.contains(driverClassName, DataBaseType.MYSQL.name());
+```
+这条语句找不到DataBaseType中的驱动类名称，后来打印`DataBaseType.MYSQL.name()`的值是`MYSQL`才发现这段代码是错误的，写一段测试来比较name属性、name()方法和
+getName()方法的返回值差异，提醒自己不要犯类似的错误。建议采用`DataBaseType.MYSQL.getName()`的方式。
+
+```java
 public enum  DataBaseType {
     /**
      * MYSQL
@@ -42,14 +48,5 @@ public enum  DataBaseType {
     public void setName(String name) {
         this.name = name;
     }
-
-
-    public static void main(String[] args){
-        System.out.println("容易忽略差别导致出错的name属性和name方法：");
-        System.out.println("name属性返回值：" + DataBaseType.MYSQL.name);
-        System.out.println("name方法返回值：" + DataBaseType.MYSQL.name());
-        System.out.println("getName()方法返回值：" + DataBaseType.MYSQL.getName());
-    }
-
-
 }
+```
