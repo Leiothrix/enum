@@ -1,9 +1,9 @@
 /**
  * @author adam
  * @date 2019/5/9 15:37
- * PS: You may say that I'm a dreamer.But I'm not the only one.
+ * PS: You may say I'm a dreamer.But I'm not the only one.
  */
-public enum  DataBaseType {
+public enum DataBaseType {
     /**
      * MYSQL
      */
@@ -32,27 +32,27 @@ public enum  DataBaseType {
     /**
      * 括号里面是几个参数，就需要定义几个字段，语法糖(●ˇ∀ˇ●)
      */
-    private String name;
+    private String value;
 
-    DataBaseType(String name) {
-        this.name = name;
+    DataBaseType(String value) {
+        this.value = value;
     }
 
     /**
      * 枚举类中避免出现set方法，毕竟是个final，违背初衷
      */
-    public String getName() {
-        return name;
+    public String getValue() {
+        return value;
     }
 
     public static final String AAA = "汪汪汪";
 
     public static void main(String[] args){
-        System.out.println("容易忽略差别导致出错的name属性和name方法：");
-        System.out.println("name属性返回值：" + DataBaseType.MYSQL.name);
+        /*
+         * 注意此处value的值是可以直接被访问的，因为在内部
+         */
         System.out.println("name方法返回值：" + DataBaseType.MYSQL.name());
-        System.out.println("getName()方法返回值：" + DataBaseType.MYSQL.getName());
+        System.out.println("value属性返回值：" + DataBaseType.MYSQL.value);
+        System.out.println("getValue()方法返回值：" + DataBaseType.MYSQL.getValue());
     }
-
-
 }
